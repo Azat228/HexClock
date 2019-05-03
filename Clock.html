@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clock</title>
+	<style type="text/css">
+		
+		h1{
+			font-size: 100px;
+			font-weight: 350;
+			margin-top: 17%;
+			text-align: center;
+			color: white;
+		}
+		p{
+			font-size: 30px;
+			font-weight: 350;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+<h1 id="clock">00:00:00</h1>
+<p id="color">#000000</p>
+<script type="text/javascript">
+	let clock = document.getElementsByTagName('h1')[0];
+	let color = document.getElementsByTagName('p')[0];
+		function HexClock() {
+			let timer = new Date();
+				let h = timer.getHours();
+				let m = timer.getMinutes();
+				let s = timer.getSeconds();
+				let time = ` ${h}:${m}:${s} ` ;
+				let Hex= `#${h}${m}${s}`;
+				color.textContent = Hex;
+				document.body.style.background = Hex;
+				clock.textContent = time;
+				
+		}
+		HexClock();
+		setInterval(HexClock,1000);
+		
+</script>
+</body>
+</html>
